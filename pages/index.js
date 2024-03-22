@@ -2,6 +2,13 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import OneSignal from 'react-onesignal';
+
+OneSignal.init({ appId: '59494dfb-bf56-4e3d-a8be-73e3c143a9b5' }).then(() => {
+  setInitialized(true);
+  OneSignal.Slidedown.promptPush();
+  // do other stuff
+});
 
 const inter = Inter({ subsets: ["latin"] });
 
